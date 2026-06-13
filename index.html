@@ -19,7 +19,6 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Load confetti synchronously so it's ready immediately -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1">
   </script>
   
@@ -242,7 +241,6 @@
     .star-rating span{color:#555;transition:.1s}
     .star-rating span.active{color:#FFD700;text-shadow:0 0 8px gold}
     
-    /* MODAL - lower z-index so confetti appears on top */
     .modal{
       display:none;
       position:fixed;
@@ -406,6 +404,7 @@
   </div>
 
   <div class="container">
+    <!-- First Popup - Continue button now has onclick directly -->
     <div id="firstPopup" class="modal" style="display:flex;">
       <div class="modal-content" style="max-width:300px;padding:32px 20px;">
         <div class="small-jazzcash">
@@ -421,7 +420,7 @@
           <p>📍 Country: <span id="userCountry">Pakistan <span class="flag-icon">🇵🇰</span></span></p>
         </div>
         <p class="secured-text"><i>🔒 Connection secured · Verified Session</i></p>
-        <button id="continueFirstPopup" class="cta-button" style="margin-top:10px;">Continue</button>
+        <button class="cta-button" style="margin-top:10px;" onclick="document.getElementById('firstPopup').style.display='none'">Continue</button>
         <p class="sponsored-text">Sponsored by JazzCash Exclusive</p>
       </div>
     </div>
@@ -498,7 +497,6 @@
     <footer style="font-size:.7rem;opacity:.6;text-align:center;padding:10px;">© 2026 All Rights Reserved. Promotional campaign only.</footer>
   </div>
 
-  <!-- WIN POPUP - z-index 100, confetti fires at z-index 999999 -->
   <div id="winPopup" class="modal">
     <div class="modal-content" style="max-width:340px;">
       <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
@@ -524,6 +522,7 @@
 
   <script>
     (function() {
+      // Reviews rendered immediately
       var reviewsData = [
         { name:"Usman", city:"Lahore", stars:5, text:"Yaar mujhe yakeen nahi ho raha 😭 Rs50,000 mil gaye! Thank you!" },
         { name:"Hira", city:"Karachi", stars:5, text:"Sach bolun toh pehle fake laga, but I actually got Rs70,000 😳" },
@@ -551,53 +550,48 @@
         }
         container.innerHTML = html;
       }
-      
       renderReviews();
 
+      // IP Detection runs immediately
+      var userIpSpan = document.getElementById('userIp');
+      var userDeviceSpan = document.getElementById('userDevice');
+      var userCountrySpan = document.getElementById('userCountry');
+
+      var ua = navigator.userAgent;
+      var deviceType = "Desktop";
+      if (/Android/i.test(ua)) deviceType = "Android";
+      else if (/iPhone|iPad|iPod/i.test(ua)) deviceType = "iPhone";
+      userDeviceSpan.textContent = deviceType;
+
+      function detectLocation() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://ipapi.co/json/', true);
+        xhr.timeout = 3000;
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            try {
+              var data = JSON.parse(xhr.responseText);
+              userIpSpan.textContent = data.ip || '192.168.1.1';
+              var country = data.country_name || 'Pakistan';
+              var code = (data.country_code || 'PK').toUpperCase();
+              var flag = String.fromCodePoint(0x1F1E6 + code.charCodeAt(0) - 65, 0x1F1E6 + code.charCodeAt(1) - 65);
+              userCountrySpan.innerHTML = country + ' <span class="flag-icon">' + flag + '</span>';
+            } catch(e) { setFallback(); }
+          } else { setFallback(); }
+        };
+        xhr.onerror = setFallback;
+        xhr.ontimeout = setFallback;
+        xhr.send();
+      }
+
+      function setFallback() {
+        userIpSpan.textContent = '103.123.45.67';
+        userCountrySpan.innerHTML = 'Pakistan <span class="flag-icon">🇵🇰</span>';
+      }
+      detectLocation();
+
+      // Rest of the app initializes on DOM ready
       function initApp() {
-        var firstPopup = document.getElementById('firstPopup');
-        var continueFirst = document.getElementById('continueFirstPopup');
-        var userIpSpan = document.getElementById('userIp');
-        var userDeviceSpan = document.getElementById('userDevice');
-        var userCountrySpan = document.getElementById('userCountry');
-
-        var ua = navigator.userAgent;
-        var deviceType = "Desktop";
-        if (/Android/i.test(ua)) deviceType = "Android";
-        else if (/iPhone|iPad|iPod/i.test(ua)) deviceType = "iPhone";
-        userDeviceSpan.textContent = deviceType;
-
-        function detectLocation() {
-          var xhr = new XMLHttpRequest();
-          xhr.open('GET', 'https://ipapi.co/json/', true);
-          xhr.timeout = 3000;
-          xhr.onload = function() {
-            if (xhr.status === 200) {
-              try {
-                var data = JSON.parse(xhr.responseText);
-                userIpSpan.textContent = data.ip || '192.168.1.1';
-                var country = data.country_name || 'Pakistan';
-                var code = (data.country_code || 'PK').toUpperCase();
-                var flag = String.fromCodePoint(0x1F1E6 + code.charCodeAt(0) - 65, 0x1F1E6 + code.charCodeAt(1) - 65);
-                userCountrySpan.innerHTML = country + ' <span class="flag-icon">' + flag + '</span>';
-              } catch(e) { setFallback(); }
-            } else { setFallback(); }
-          };
-          xhr.onerror = setFallback;
-          xhr.ontimeout = setFallback;
-          xhr.send();
-        }
-
-        function setFallback() {
-          userIpSpan.textContent = '103.123.45.67';
-          userCountrySpan.innerHTML = 'Pakistan <span class="flag-icon">🇵🇰</span>';
-        }
-        detectLocation();
-
-        continueFirst.addEventListener('click', function() {
-          firstPopup.style.display = 'none';
-        });
-
         var canvas = document.getElementById('wheelCanvas');
         var ctx = canvas.getContext('2d');
         var spinBtn = document.getElementById('spinButton');
@@ -725,55 +719,15 @@
           return final;
         }
 
-        // FIXED: Confetti now fires with HIGH z-index so it appears ABOVE the modal
         function fireConfettiAboveModal() {
           if (typeof confetti === 'undefined') return;
-          
-          // Fire multiple bursts with z-index higher than modal (modal is z-index: 100)
-          confetti({
-            particleCount: 200,
-            spread: 100,
-            origin: { y: 0.5, x: 0.5 },
-            colors: ['#FFD700','#b8860b','#ff4444','#ffffff'],
-            z: 99999
-          });
-          
+          confetti({ particleCount: 200, spread: 100, origin: { y: 0.5, x: 0.5 }, colors: ['#FFD700','#b8860b','#ff4444','#ffffff'], z: 99999 });
           setTimeout(function() {
-            confetti({
-              particleCount: 100,
-              spread: 70,
-              origin: { y: 0.4, x: 0.3 },
-              colors: ['#FFD700','#ffaa00','#ffffff'],
-              z: 99999
-            });
-            confetti({
-              particleCount: 100,
-              spread: 70,
-              origin: { y: 0.4, x: 0.7 },
-              colors: ['#FFD700','#ffaa00','#ffffff'],
-              z: 99999
-            });
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.4, x: 0.3 }, colors: ['#FFD700','#ffaa00','#ffffff'], z: 99999 });
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.4, x: 0.7 }, colors: ['#FFD700','#ffaa00','#ffffff'], z: 99999 });
           }, 150);
-          
-          setTimeout(function() {
-            confetti({
-              particleCount: 80,
-              spread: 60,
-              origin: { y: 0.5, x: 0.5 },
-              colors: ['#FFD700','#ff4444','#ffffff'],
-              z: 99999
-            });
-          }, 350);
-          
-          setTimeout(function() {
-            confetti({
-              particleCount: 60,
-              spread: 50,
-              origin: { y: 0.6, x: 0.5 },
-              colors: ['#FFD700','#b8860b','#ffffff'],
-              z: 99999
-            });
-          }, 550);
+          setTimeout(function() { confetti({ particleCount: 80, spread: 60, origin: { y: 0.5, x: 0.5 }, colors: ['#FFD700','#ff4444','#ffffff'], z: 99999 }); }, 350);
+          setTimeout(function() { confetti({ particleCount: 60, spread: 50, origin: { y: 0.6, x: 0.5 }, colors: ['#FFD700','#b8860b','#ffffff'], z: 99999 }); }, 550);
         }
 
         function showWinPopup(prize) {
@@ -781,10 +735,7 @@
           document.body.classList.add('no-scroll');
           stickyBottomBtn.style.display = 'none';
           winPopup.style.display = 'flex';
-          
-          // Fire confetti ABOVE the modal immediately
           fireConfettiAboveModal();
-          
           startCountdown();
           showLiveActivity();
           if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(200);
