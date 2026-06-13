@@ -4,106 +4,862 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, shrink-to-fit=yes">
   <meta http-equiv="delegate-ch" content="sec-ch-ua https://vtdmp.bemobtrcks.com; sec-ch-ua-mobile https://vtdmp.bemobtrcks.com; sec-ch-ua-arch https://vtdmp.bemobtrcks.com; sec-ch-ua-model https://vtdmp.bemobtrcks.com; sec-ch-ua-platform https://vtdmp.bemobtrcks.com; sec-ch-ua-platform-version https://vtdmp.bemobtrcks.com; sec-ch-ua-bitness https://vtdmp.bemobtrcks.com; sec-ch-ua-full-version-list https://vtdmp.bemobtrcks.com; sec-ch-ua-full-version https://vtdmp.bemobtrcks.com">
-  <title>Spin & Win Pakistan 🇵🇰 | JazzCash Exclusive</title>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1">
-  </script>
+  <title>Spin & Win Pakistan 🇵🇰</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://i.postimg.cc">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://ipapi.co">
+  
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+  <link rel="preload" href="https://i.postimg.cc/DZKkJ539/file-000000008b70724694183c5604ff4d30.png" as="image">
+  <link rel="preload" href="https://i.postimg.cc/Dz5P8RNg/extracted-image.png" as="image">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Load confetti synchronously so it's ready immediately -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1">
+  </script>
+  
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      background:radial-gradient(circle at top,#2a0000,#1a0000 80%);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      padding:0;
+      position:relative;
+      color:#fff;
+      -webkit-tap-highlight-color:transparent;
+      text-rendering:optimizeSpeed;
+      overflow-x:hidden;
+      width:100%
     }
+    body.no-scroll{overflow:hidden}
+    .glass-card{
+      background:rgba(255,255,255,.06);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border:1px solid rgba(255,215,0,.25);
+      border-radius:32px;
+      box-shadow:0 20px 40px rgba(0,0,0,.6),0 0 20px rgba(255,215,0,.2);
+      padding:20px;
+      width:100%
+    }
+    .sticky-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(10,0,0,.85);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(255,215,0,.5);
+      padding:10px 20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.7);
+      margin-bottom:0
+    }
+    .logo-placeholder{
+      font-weight:700;
+      font-size:1.3rem;
+      letter-spacing:1px;
+      background:linear-gradient(180deg,#FFD700 0%,#b8860b 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text
+    }
+    .gold-divider{
+      width:80%;
+      height:2px;
+      background:linear-gradient(90deg,transparent,#FFD700,transparent);
+      margin:24px auto;
+      opacity:.7
+    }
+    .container{
+      max-width:500px;
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:20px;
+      padding:0 12px 80px
+    }
+    
+    .banner-wrapper{
+      width:100%;
+      margin:0;
+      padding:0;
+      line-height:0;
+      font-size:0
+    }
+    .banner-img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      animation:float 4s ease-in-out infinite;
+      border:none;
+      border-radius:0;
+      margin:0;
+      padding:0
+    }
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+    
+    .wheel-header{
+      font-size:2rem;
+      font-weight:700;
+      background:linear-gradient(to right,#FFD700,#ffb347);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      text-align:center
+    }
+    .sub-header{color:#e0e0e0;margin-bottom:8px;font-weight:500;text-align:center}
+    .urgency-text{
+      color:#FFD700;
+      font-weight:600;
+      font-size:.9rem;
+      margin-bottom:16px;
+      text-align:center;
+      font-style:italic;
+      animation:glowText 2s ease-in-out infinite
+    }
+    @keyframes glowText{0%{text-shadow:0 0 5px rgba(255,215,0,.5)}50%{text-shadow:0 0 15px rgba(255,215,0,.9),0 0 25px rgba(255,215,0,.5)}100%{text-shadow:0 0 5px rgba(255,215,0,.5)}}
+    .wheel-container{position:relative;width:280px;height:280px;margin:10px auto}
+    .wheel-pointer{
+      position:absolute;
+      top:-18px;
+      left:50%;
+      transform:translateX(-50%);
+      width:0;height:0;
+      border-left:20px solid transparent;
+      border-right:20px solid transparent;
+      border-top:34px solid #FFD700;
+      filter:drop-shadow(0 0 10px gold);
+      z-index:10
+    }
+    canvas#wheelCanvas{width:100%;height:100%;display:block;filter:drop-shadow(0 0 18px gold)}
+    .spin-btn{
+      background:linear-gradient(180deg,#FFD700 0%,#b85e0c 100%);
+      border:none;
+      color:#1a0000;
+      font-weight:800;
+      font-size:1.3rem;
+      padding:14px 32px;
+      border-radius:50px;
+      margin-top:15px;
+      letter-spacing:1px;
+      box-shadow:0 0 30px rgba(255,215,0,.67);
+      animation:pulse 1.6s infinite;
+      cursor:pointer;
+      transition:transform .2s;
+      width:fit-content;
+      align-self:center
+    }
+    .spin-btn:active{transform:scale(.94)}
+    @keyframes pulse{0%{box-shadow:0 0 15px #FFD700}50%{box-shadow:0 0 45px #fa0,0 0 20px #f50}100%{box-shadow:0 0 15px #FFD700}}
+    .partner-row{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:16px;
+      margin:12px 0;
+      flex-wrap:wrap;
+      background:rgba(0,0,0,.35);
+      padding:8px 16px;
+      border-radius:40px;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border:1px solid rgba(255,215,0,.2)
+    }
+    .partner-item{display:flex;align-items:center;gap:6px}
+    .partner-logo{height:28px;object-fit:contain;filter:drop-shadow(0 0 6px gold)}
+    .easypaisa-logo{height:24px;object-fit:contain;filter:drop-shadow(0 0 6px #FFD700)}
+    .partner-label{font-size:.65rem;font-weight:600;color:#FFD700;letter-spacing:.3px}
+    .partner-divider{width:1px;height:18px;background:rgba(255,215,0,.4);margin:0 2px}
+    .adfree-badge{
+      color:#fff;
+      font-weight:700;
+      background:rgba(255,215,0,.2);
+      padding:4px 10px;
+      border-radius:16px;
+      font-size:.65rem;
+      letter-spacing:.5px;
+      border:1px solid rgba(255,215,0,.3)
+    }
+    .why-play-vertical{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .why-card{
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      padding:12px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,215,0,.35);
+      font-weight:500;
+      font-size:.9rem;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      transition:transform .2s,box-shadow .2s
+    }
+    .why-card:active{transform:translateX(4px);box-shadow:0 8px 20px rgba(255,215,0,.15)}
+    .why-icon{font-size:1.5rem;flex-shrink:0;width:32px;text-align:center}
+    .reviews-feed{max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:4px;-webkit-overflow-scrolling:touch}
+    .review-card{
+      background:rgba(20,0,0,.6);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border:1px solid rgba(255,215,0,.31);
+      border-radius:24px;
+      padding:14px;
+      display:flex;
+      gap:12px;
+      align-items:center
+    }
+    .avatar{
+      width:44px;height:44px;
+      background:linear-gradient(145deg,#b8860b,#8b6508);
+      border-radius:50%;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#000;
+      font-size:1.2rem;
+      border:2px solid gold;
+      flex-shrink:0
+    }
+    .star-rating{display:flex;gap:6px;cursor:pointer;font-size:1.6rem;margin:8px 0;justify-content:center}
+    .star-rating span{color:#555;transition:.1s}
+    .star-rating span.active{color:#FFD700;text-shadow:0 0 8px gold}
+    
+    /* MODAL - lower z-index so confetti appears on top */
+    .modal{
+      display:none;
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,.85);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      align-items:center;
+      justify-content:center;
+      z-index:100
+    }
+    .modal-content{
+      background:rgba(26,0,0,.95);
+      border:2px solid #FFD700;
+      border-radius:44px;
+      padding:28px 22px;
+      max-width:320px;
+      width:88%;
+      text-align:center;
+      animation:fadeScale .35s ease;
+      box-shadow:0 0 50px rgba(255,215,0,.5);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      position:relative;
+      z-index:101
+    }
+    @keyframes fadeScale{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+    
+    .cta-button{
+      background:linear-gradient(180deg,#FFD700 0%,#b85e0c 100%);
+      color:#1a0000;
+      font-weight:800;
+      padding:14px 24px;
+      border-radius:40px;
+      margin-top:8px;
+      display:inline-block;
+      text-decoration:none;
+      font-size:1rem;
+      letter-spacing:.5px;
+      box-shadow:0 0 20px orange;
+      width:100%;
+      text-align:center
+    }
+    .countdown-timer-small{
+      background:rgba(255,0,0,.15);
+      border:1px dashed rgba(255,215,0,.5);
+      border-radius:20px;
+      padding:5px 12px;
+      margin:8px 0;
+      font-weight:600;
+      color:#FFD700;
+      font-size:.8rem;
+      display:inline-block;
+      letter-spacing:.3px
+    }
+    .money-visual{font-size:4rem;margin:8px 0;animation:bounceMoney .6s ease infinite alternate}
+    @keyframes bounceMoney{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+    .limited-offer-badge{
+      background:linear-gradient(90deg,#f44,#f66);
+      color:#fff;
+      font-weight:700;
+      font-size:.75rem;
+      padding:6px 16px;
+      border-radius:20px;
+      display:inline-block;
+      margin:8px auto 4px;
+      letter-spacing:.5px;
+      animation:pulse-red 1.5s infinite;
+      text-transform:uppercase
+    }
+    @keyframes pulse-red{0%{box-shadow:0 0 8px #f44}50%{box-shadow:0 0 20px red,0 0 30px #f44}100%{box-shadow:0 0 8px #f44}}
+    .sticky-bottom{
+      position:fixed;
+      bottom:12px;
+      left:10px;right:10px;
+      text-align:center;
+      padding:12px;
+      border-radius:60px;
+      font-weight:700;
+      color:#000;
+      background:#FFD700;
+      z-index:30;
+      box-shadow:0 0 30px gold;
+      cursor:pointer;
+      max-width:500px;
+      margin:0 auto
+    }
+    .live-activity-toast{
+      position:fixed;
+      bottom:90px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(0,0,0,.9);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border:1.5px solid #FFD700;
+      border-radius:30px;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      z-index:25;
+      font-size:.78rem;
+      font-weight:500;
+      box-shadow:0 8px 25px rgba(0,0,0,.8);
+      animation:slideUp .4s ease,fadeOut .5s ease 3.5s forwards;
+      max-width:90vw;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis
+    }
+    @keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}
+    @keyframes fadeOut{to{opacity:0;transform:translateX(-50%) translateY(-10px)}}
+    .live-dot{width:10px;height:10px;background:#f44;border-radius:50%;animation:livePulse 1s infinite;flex-shrink:0}
+    @keyframes livePulse{0%{box-shadow:0 0 5px #f44}50%{box-shadow:0 0 15px red}100%{box-shadow:0 0 5px #f44}}
+    .live-counter{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,0,0,.15);
+      border:1px solid rgba(255,215,0,.3);
+      border-radius:20px;
+      padding:6px 14px;
+      font-size:.75rem;
+      font-weight:600;
+      color:#FFD700;
+      margin-bottom:8px
+    }
+    .contact-phone{color:#FFD700;text-decoration:none;font-weight:600;font-size:1rem;transition:.2s}
+    button{cursor:pointer}
+    input,textarea{font-family:inherit}
+    .flag-icon{font-size:1.4rem;vertical-align:middle;margin-left:4px}
+    .small-jazzcash{font-size:.7rem;display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:4px;opacity:.9;letter-spacing:.3px}
+    .big-congrats{font-size:2rem;font-weight:800;color:#FFD700;margin:6px 0 4px;line-height:1.2}
+    .geo-info-box{
+      background:rgba(0,0,0,.6);
+      border-radius:20px;
+      padding:16px 14px;
+      margin:12px 0 8px;
+      text-align:left;
+      font-size:.9rem;
+      border:1px solid rgba(255,215,0,.35);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      line-height:1.5
+    }
+    .normal-text{font-size:.9rem;margin:4px 0;color:#ddd;line-height:1.4}
+    .secured-text{font-size:.7rem;color:#FFD700;margin:6px 0 2px;letter-spacing:.3px;font-style:italic}
+    .sponsored-text{font-size:.65rem;color:#FFD700;margin-top:8px;opacity:.8;letter-spacing:.3px}
+  </style>
+</head>
+<body>
+  <div class="sticky-header">
+    <span class="logo-placeholder">🏆 SPIN & WIN PAKISTAN</span>
+  </div>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #2a0000, #1a0000 80%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 0 0 80px;
-      position: relative;
-      color: #fff;
-      -webkit-tap-highlight-color: transparent;
-    }
+  <div class="banner-wrapper">
+    <img src="https://i.postimg.cc/DZKkJ539/file-000000008b70724694183c5604ff4d30.png" alt="Spin & Win Banner" class="banner-img" loading="eager">
+  </div>
 
-    body.no-scroll {
-      overflow: hidden;
-    }
+  <div class="container">
+    <div id="firstPopup" class="modal" style="display:flex;">
+      <div class="modal-content" style="max-width:300px;padding:32px 20px;">
+        <div class="small-jazzcash">
+          <img src="https://i.postimg.cc/Dz5P8RNg/extracted-image.png" alt="JazzCash" style="height:20px;" width="20" height="20" loading="eager">
+          <span style="color:#FFD700;">JazzCash Exclusive</span>
+        </div>
+        <div class="big-congrats">🎉 Congratulations!</div>
+        <p class="normal-text">Your phone number has been chosen to receive <strong style="color:#FFD700;">up to Rs100,000</strong></p>
+        <div class="limited-offer-badge">⚡ Limited Time Offer</div>
+        <div class="geo-info-box">
+          <p>🌐 IP: <span id="userIp">detecting...</span></p>
+          <p>📱 Device: <span id="userDevice">Android</span></p>
+          <p>📍 Country: <span id="userCountry">Pakistan <span class="flag-icon">🇵🇰</span></span></p>
+        </div>
+        <p class="secured-text"><i>🔒 Connection secured · Verified Session</i></p>
+        <button id="continueFirstPopup" class="cta-button" style="margin-top:10px;">Continue</button>
+        <p class="sponsored-text">Sponsored by JazzCash Exclusive</p>
+      </div>
+    </div>
 
-    .glass-card {
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 215, 0, 0.25);
-      border-radius: 32px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(255,215,0,0.2);
-      padding: 20px;
-      width: 100%;
-    }
+    <div class="gold-divider"></div>
 
-    .sticky-header {
-      position: sticky;
-      top: 8px;
-      z-index: 20;
-      width: 100%;
-      max-width: 500px;
-      margin: 12px auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(10, 0, 0, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,215,0,0.5);
-      border-radius: 60px;
-      padding: 8px 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-    }
+    <h2 class="wheel-header">Spin & Win Big!</h2>
+    <p class="sub-header">Spin the magical wheel to win up to Rs100,000 instantly</p>
+    <p class="urgency-text">🔥 Thousands of Pakistanis are claiming their prize today — why miss out?</p>
 
-    .logo-placeholder {
-      font-weight: 700;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-      background: linear-gradient(180deg, #FFD700 0%, #b8860b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    <div class="live-counter">
+      <span class="live-dot"></span>
+      <span id="liveCounterText">234 people spinning right now</span>
+    </div>
 
-    .gold-divider {
-      width: 80%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #FFD700, transparent);
-      margin: 24px auto;
-      opacity: 0.7;
-    }
+    <div class="wheel-container">
+      <div class="wheel-pointer"></div>
+      <canvas id="wheelCanvas" width="300" height="300"></canvas>
+    </div>
+    <button id="spinButton" class="spin-btn">🎡 SPIN NOW</button>
+    
+    <div class="partner-row">
+      <div class="partner-item">
+        <img src="https://i.postimg.cc/Dz5P8RNg/extracted-image.png" alt="JazzCash" class="partner-logo" width="28" height="28" loading="lazy">
+        <span class="partner-label">JazzCash</span>
+      </div>
+      <div class="partner-divider"></div>
+      <span class="adfree-badge">#ADFREE</span>
+      <div class="partner-divider"></div>
+      <div class="partner-item">
+        <img src="https://i.postimg.cc/gkrYQ246/acded9d6362d497965c18a071cb9fd.webp" alt="EasyPaisa" class="easypaisa-logo" width="24" height="24" loading="lazy">
+        <span class="partner-label">EasyPaisa</span>
+      </div>
+    </div>
 
-    .container {
-      max-width: 500px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 0 12px;
-    }
+    <div class="gold-divider"></div>
 
-    .banner-wrapper {
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
-      overflow: hidden;
-    }
-    .banner-img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      animation: float 4s ease-in-out infinite;
+    <div class="glass-card">
+      <h3 style="color:#FFD700;margin-bottom:12px;">Why Play Spin & Win?</h3>
+      <div class="why-play-vertical">
+        <div class="why-card"><span class="why-icon">🆓</span> Free to Play — No payment required</div>
+        <div class="why-card"><span class="why-icon">⚡</span> Instant Results — Immediate rewards</div>
+        <div class="why-card"><span class="why-icon">💰</span> Big Prizes — Up to Rs100,000</div>
+        <div class="why-card"><span class="why-icon">🔒</span> Fair Game — Secure & transparent</div>
+        <div class="why-card"><span class="why-icon">🎁</span> Multiple Rewards — Various prize tiers</div>
+        <div class="why-card"><span class="why-icon">📱</span> Play Anywhere — Mobile friendly</div>
+      </div>
+    </div>
+
+    <div class="gold-divider"></div>
+
+    <div class="glass-card">
+      <h3 style="color:#FFD700;">Recent Winners & Reviews</h3>
+      <div class="reviews-feed" id="reviewsContainer"></div>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+        <input type="text" placeholder="Your name" id="commentName" style="padding:12px;border-radius:24px;border:none;background:rgba(255,255,255,.15);color:#fff;">
+        <input type="text" placeholder="City" id="commentCity" style="padding:12px;border-radius:24px;border:none;background:rgba(255,255,255,.15);color:#fff;">
+        <textarea placeholder="Write your experience..." id="commentText" rows="2" style="padding:12px;border-radius:24px;border:none;background:rgba(255,255,255,.15);color:#fff;"></textarea>
+        <div style="display:flex;align-items:center;justify-content:space-between;color:#FFD700;font-weight:500;background:rgba(0,0,0,.3);border-radius:24px;padding:8px 16px;">
+          <span>Your rating:</span>
+          <div class="star-rating" id="starRating">
+            <span data-value="1">☆</span><span data-value="2">☆</span><span data-value="3">☆</span><span data-value="4">☆</span><span data-value="5">☆</span>
+          </div>
+        </div>
+        <button id="submitComment" style="background:#FFD700;color:#000;padding:12px;border-radius:30px;font-weight:700;">Submit Review</button>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:10px 0;opacity:.8;">
+      <span>About Us</span> <span>•</span> <span>Terms</span> <span>•</span> <span>Privacy</span> <span>•</span> <span>Help</span>
+    </div>
+    <div style="opacity:.8;">📧 support@spinwin.pk | 📞 <a href="tel:+92216333647" class="contact-phone">+92 21 6333647</a></div>
+    <div style="margin:8px;opacity:.9;">💬 Live Chat (24/7)</div>
+    <footer style="font-size:.7rem;opacity:.6;text-align:center;padding:10px;">© 2026 All Rights Reserved. Promotional campaign only.</footer>
+  </div>
+
+  <!-- WIN POPUP - z-index 100, confetti fires at z-index 999999 -->
+  <div id="winPopup" class="modal">
+    <div class="modal-content" style="max-width:340px;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+        <img src="https://i.postimg.cc/Dz5P8RNg/extracted-image.png" alt="JazzCash" style="height:32px;" width="32" height="32" loading="lazy">
+        <span style="color:#FFD700;font-weight:700;">JazzCash Exclusive</span>
+      </div>
+      <h2>🎉 Congratulations!</h2>
+      <p style="font-size:1.2rem;font-weight:600;margin:8px 0;">You have won <strong style="color:#FFD700;font-size:2rem;" id="winAmount">Rs100,000</strong></p>
+      <div class="money-visual">💵✨💵</div>
+      <p style="font-size:.95rem;font-weight:500;margin:8px 0;">Confirm your phone number to claim your reward</p>
+      <div class="countdown-timer-small" id="countdown">⏳ Limited offer expires in 01:00</div>
+      <a href="https://vtdmp.bemobtrcks.com/click/1?ns=c%3Dcf689836-f0ce-48cc-b065-4545b6f340c6..l%3D2..a%3D0..b%3D0" class="cta-button" id="claimBtn">📱 Confirm Your Phone Number</a>
+      <p style="font-size:.7rem;margin-top:10px;opacity:.8;">Sponsored by JazzCash · Verified Winner</p>
+    </div>
+  </div>
+
+  <div id="liveToastContainer"></div>
+  <div class="sticky-bottom" id="stickyBottomBtn">⚡ Limited spins remaining today! Tap to spin</div>
+
+  <audio id="spinSound" preload="none">
+    <source src="https://res.cloudinary.com/dbhfjxl73/video/upload/q_auto/f_auto/v1780664009/mixkit-fast-bike-wheel-spin-1614_mtkarj.wav" type="audio/wav">
+  </audio>
+
+  <script>
+    (function() {
+      var reviewsData = [
+        { name:"Usman", city:"Lahore", stars:5, text:"Yaar mujhe yakeen nahi ho raha 😭 Rs50,000 mil gaye! Thank you!" },
+        { name:"Hira", city:"Karachi", stars:5, text:"Sach bolun toh pehle fake laga, but I actually got Rs70,000 😳" },
+        { name:"Adeel Aman", city:"Islamabad", stars:5, text:"Bohat easy tha, sirf spin kiya aur reward mil gaya ❤️" },
+        { name:"Sana", city:"Rawalpindi", stars:5, text:"I tried randomly and boom… Rs100k 😭🔥 legit hai!" },
+        { name:"Bin", city:"Faisalabad", stars:3, text:"missed for the 2nd time will try again👍" },
+        { name:"Bilal", city:"Faisalabad", stars:4, text:"Network slow tha phir bhi kaam kar gaya, impressed 👍" },
+        { name:"Zara", city:"Multan", stars:5, text:"Mujhe Rs50k mila but friend ko Rs70k 😭 still happy!" },
+        { name:"Imran", city:"Peshawar", stars:5, text:"First time kuch online jeeta hoon 😂 amazing experience" },
+        { name:"Daniyal", city:"Sialkot", stars:5, text:"Spin karte hi result aa gaya, no stress no wait 💯" },
+        { name:"Ayesha", city:"Lahore", stars:5, text:"Mujhe laga tha yeh fake hai lekin Rs100,000 jeet ke yakeen aa gaya 😍❤️" },
+        { name:"Kamran", city:"Quetta", stars:4, text:"Finally kuch acha mila online, Rs70k in just one spin! so happy 🙌" },
+        { name:"Fatima", city:"Hyderabad", stars:5, text:"I was shocked when I saw the confirmation, Rs50k instantly! Shukriya JazzCash 💚" },
+        { name:"Rashid", city:"Gujranwala", stars:5, text:"Bhaiyo yeh sach mein kaam karta hai, bas spin karo aur prize lo 🎉" },
+        { name:"Nadia", city:"Sargodha", stars:4, text:"Pehli dafa kisi game ne sach mein reward diya, thank you Spin & Win! 🌟" }
+      ];
+
+      function renderReviews() {
+        var container = document.getElementById('reviewsContainer');
+        if (!container) return;
+        var html = '';
+        for (var i = 0; i < reviewsData.length; i++) {
+          var r = reviewsData[i];
+          html += '<div class="review-card"><div class="avatar">' + r.name.charAt(0) + '</div><div style="flex:1;min-width:0;"><strong>' + r.name + ', ' + r.city + '</strong> ' + '⭐'.repeat(r.stars) + '<p style="margin:4px 0 0;font-size:0.9rem;word-break:break-word;">' + r.text + '</p></div></div>';
+        }
+        container.innerHTML = html;
+      }
+      
+      renderReviews();
+
+      function initApp() {
+        var firstPopup = document.getElementById('firstPopup');
+        var continueFirst = document.getElementById('continueFirstPopup');
+        var userIpSpan = document.getElementById('userIp');
+        var userDeviceSpan = document.getElementById('userDevice');
+        var userCountrySpan = document.getElementById('userCountry');
+
+        var ua = navigator.userAgent;
+        var deviceType = "Desktop";
+        if (/Android/i.test(ua)) deviceType = "Android";
+        else if (/iPhone|iPad|iPod/i.test(ua)) deviceType = "iPhone";
+        userDeviceSpan.textContent = deviceType;
+
+        function detectLocation() {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'https://ipapi.co/json/', true);
+          xhr.timeout = 3000;
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              try {
+                var data = JSON.parse(xhr.responseText);
+                userIpSpan.textContent = data.ip || '192.168.1.1';
+                var country = data.country_name || 'Pakistan';
+                var code = (data.country_code || 'PK').toUpperCase();
+                var flag = String.fromCodePoint(0x1F1E6 + code.charCodeAt(0) - 65, 0x1F1E6 + code.charCodeAt(1) - 65);
+                userCountrySpan.innerHTML = country + ' <span class="flag-icon">' + flag + '</span>';
+              } catch(e) { setFallback(); }
+            } else { setFallback(); }
+          };
+          xhr.onerror = setFallback;
+          xhr.ontimeout = setFallback;
+          xhr.send();
+        }
+
+        function setFallback() {
+          userIpSpan.textContent = '103.123.45.67';
+          userCountrySpan.innerHTML = 'Pakistan <span class="flag-icon">🇵🇰</span>';
+        }
+        detectLocation();
+
+        continueFirst.addEventListener('click', function() {
+          firstPopup.style.display = 'none';
+        });
+
+        var canvas = document.getElementById('wheelCanvas');
+        var ctx = canvas.getContext('2d');
+        var spinBtn = document.getElementById('spinButton');
+        var winPopup = document.getElementById('winPopup');
+        var winAmountSpan = document.getElementById('winAmount');
+        var spinSound = document.getElementById('spinSound');
+        var countdownEl = document.getElementById('countdown');
+        var liveCounterText = document.getElementById('liveCounterText');
+        var liveToastContainer = document.getElementById('liveToastContainer');
+        var stickyBottomBtn = document.getElementById('stickyBottomBtn');
+
+        stickyBottomBtn.addEventListener('click', function() {
+          spinBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        var segments = [
+          { label: 'Rs100,000', color: '#b8860b' },
+          { label: 'Rs70,000', color: '#FFD700' },
+          { label: 'Rs50,000', color: '#daa520' },
+          { label: 'Rs10,000', color: '#cd7f32' },
+          { label: 'Try Again', color: '#8b0000' },
+          { label: '❌ Cancel', color: '#4a0000' }
+        ];
+        var prizeValues = ['Rs100,000', 'Rs70,000', 'Rs50,000'];
+        
+        var currentRotation = 0;
+        var spinning = false;
+        var countdownInterval;
+
+        var liveNames = ["Ahmed K.","Fatima S.","Bilal R.","Zainab M.","Usman T.","Hira J.","Daniyal P.","Sana L.","Kamran B.","Ayesha N.","Rashid G.","Nadia H.","Imran W.","Zara Q.","Fahad D.","Marium E.","Saad U.","Tania V.","Omar F.","Lubna C."];
+        var liveCities = ["Lahore","Karachi","Islamabad","Rawalpindi","Faisalabad","Multan","Peshawar","Quetta","Sialkot","Hyderabad","Gujranwala","Sargodha","Bahawalpur","Sukkur","Larkana"];
+        var livePrizes = ["Rs100,000","Rs70,000","Rs50,000","Rs100,000","Rs70,000","Rs50,000","Rs100,000","Rs70,000","Rs50,000","Rs100,000"];
+
+        function updateLiveCounter() {
+          liveCounterText.textContent = (200 + Math.floor(Math.random() * 100)) + ' people spinning right now';
+        }
+        updateLiveCounter();
+        setInterval(updateLiveCounter, 5000);
+
+        function showLiveActivity() {
+          var name = liveNames[Math.floor(Math.random() * liveNames.length)];
+          var city = liveCities[Math.floor(Math.random() * liveCities.length)];
+          var prize = livePrizes[Math.floor(Math.random() * livePrizes.length)];
+          var toast = document.createElement('div');
+          toast.className = 'live-activity-toast';
+          toast.innerHTML = '<span class="live-dot"></span><span>🎉 <strong>' + name + '</strong> ' + city + ' won <span style="color:#FFD700;">' + prize + '</span></span>';
+          liveToastContainer.appendChild(toast);
+          setTimeout(function() { if (toast.parentNode) toast.remove(); }, 4500);
+        }
+
+        setTimeout(function() { showLiveActivity(); }, 3000);
+        setInterval(function() {
+          setTimeout(function() { showLiveActivity(); }, 8000 + Math.floor(Math.random() * 7000));
+        }, 15000);
+
+        function drawWheel(rotation) {
+          var centerX = 150, centerY = 150, radius = 140;
+          ctx.clearRect(0,0,300,300);
+          var angleStep = (2 * Math.PI) / segments.length;
+          for (var i = 0; i < segments.length; i++) {
+            var startAngle = i * angleStep + (rotation || 0);
+            var endAngle = startAngle + angleStep;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+            ctx.fillStyle = segments[i].color;
+            ctx.fill();
+            ctx.strokeStyle = '#1a0000';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(startAngle + angleStep/2);
+            ctx.textAlign = "right";
+            ctx.fillStyle = "#fff";
+            ctx.font = "bold 14px Inter,sans-serif";
+            ctx.shadowColor = "#000";
+            ctx.shadowBlur = 4;
+            ctx.fillText(segments[i].label, radius-15, 5);
+            ctx.restore();
+          }
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, 30, 0, 2*Math.PI);
+          ctx.fillStyle = '#FFD700';
+          ctx.fill();
+          ctx.strokeStyle = '#b8860b';
+          ctx.lineWidth = 3;
+          ctx.stroke();
+          ctx.font = '28px Inter,sans-serif';
+          ctx.fillStyle = '#1a0000';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('🎁', centerX, centerY);
+        }
+        drawWheel(0);
+
+        canvas.addEventListener('click', function(e) {
+          var rect = canvas.getBoundingClientRect();
+          var x = (e.clientX - rect.left) * (canvas.width / rect.width);
+          var y = (e.clientY - rect.top) * (canvas.height / rect.height);
+          if (Math.sqrt((x-150)*(x-150) + (y-150)*(y-150)) <= 35 && !spinning) spinBtn.click();
+        });
+
+        function startCountdown() {
+          var seconds = 60;
+          countdownEl.textContent = '⏳ Limited offer expires in 01:00';
+          clearInterval(countdownInterval);
+          countdownInterval = setInterval(function() {
+            seconds--;
+            if (seconds <= 0) { clearInterval(countdownInterval); countdownEl.textContent = '⚠️ Offer expired'; return; }
+            var m = Math.floor(seconds/60), s = seconds%60;
+            countdownEl.textContent = '⏳ Limited offer expires in ' + (m<10?'0':'') + m + ':' + (s<10?'0':'') + s;
+          }, 1000);
+        }
+
+        function getTargetRotationForPrize(prizeLabel) {
+          var index = -1;
+          for (var i = 0; i < segments.length; i++) { if (segments[i].label === prizeLabel) { index = i; break; } }
+          var angleStep = (2*Math.PI)/segments.length;
+          var segmentCenterAngle = index*angleStep + angleStep/2;
+          var targetAngle = -Math.PI/2 - segmentCenterAngle;
+          var fullSpins = (Math.floor(Math.random()*5)+8)*2*Math.PI;
+          var final = targetAngle + fullSpins;
+          while (final <= currentRotation) final += 2*Math.PI;
+          return final;
+        }
+
+        // FIXED: Confetti now fires with HIGH z-index so it appears ABOVE the modal
+        function fireConfettiAboveModal() {
+          if (typeof confetti === 'undefined') return;
+          
+          // Fire multiple bursts with z-index higher than modal (modal is z-index: 100)
+          confetti({
+            particleCount: 200,
+            spread: 100,
+            origin: { y: 0.5, x: 0.5 },
+            colors: ['#FFD700','#b8860b','#ff4444','#ffffff'],
+            z: 99999
+          });
+          
+          setTimeout(function() {
+            confetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.4, x: 0.3 },
+              colors: ['#FFD700','#ffaa00','#ffffff'],
+              z: 99999
+            });
+            confetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.4, x: 0.7 },
+              colors: ['#FFD700','#ffaa00','#ffffff'],
+              z: 99999
+            });
+          }, 150);
+          
+          setTimeout(function() {
+            confetti({
+              particleCount: 80,
+              spread: 60,
+              origin: { y: 0.5, x: 0.5 },
+              colors: ['#FFD700','#ff4444','#ffffff'],
+              z: 99999
+            });
+          }, 350);
+          
+          setTimeout(function() {
+            confetti({
+              particleCount: 60,
+              spread: 50,
+              origin: { y: 0.6, x: 0.5 },
+              colors: ['#FFD700','#b8860b','#ffffff'],
+              z: 99999
+            });
+          }, 550);
+        }
+
+        function showWinPopup(prize) {
+          winAmountSpan.textContent = prize;
+          document.body.classList.add('no-scroll');
+          stickyBottomBtn.style.display = 'none';
+          winPopup.style.display = 'flex';
+          
+          // Fire confetti ABOVE the modal immediately
+          fireConfettiAboveModal();
+          
+          startCountdown();
+          showLiveActivity();
+          if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(200);
+        }
+
+        function hideWinPopup() {
+          winPopup.style.display = 'none';
+          document.body.classList.remove('no-scroll');
+          stickyBottomBtn.style.display = 'block';
+          clearInterval(countdownInterval);
+        }
+
+        spinBtn.addEventListener('click', function() {
+          if (spinning) return;
+          spinning = true;
+          spinBtn.disabled = true;
+          if (spinSound) { spinSound.currentTime = 0; spinSound.play().catch(function(){}); }
+          var randomPrize = prizeValues[Math.floor(Math.random()*prizeValues.length)];
+          var targetRotation = getTargetRotationForPrize(randomPrize);
+          var duration = 4000 + Math.floor(Math.random()*1500);
+          var startRotation = currentRotation;
+          var startTime = performance.now();
+          function animateSpin(now) {
+            var elapsed = now - startTime;
+            var progress = Math.min(elapsed/duration, 1);
+            currentRotation = startRotation + (targetRotation - startRotation)*(1 - Math.pow(1-progress,3));
+            drawWheel(currentRotation);
+            if (progress < 1) requestAnimationFrame(animateSpin);
+            else { spinning = false; spinBtn.disabled = false; showWinPopup(randomPrize); }
+          }
+          requestAnimationFrame(animateSpin);
+        });
+
+        document.getElementById('claimBtn').addEventListener('click', function() {
+          hideWinPopup();
+        });
+
+        var starSpans = document.querySelectorAll('#starRating span');
+        var selectedStars = 5;
+        function updateStars(v) {
+          selectedStars = v;
+          for (var i = 0; i < starSpans.length; i++) {
+            starSpans[i].textContent = i < v ? '★' : '☆';
+            if (i < v) starSpans[i].classList.add('active');
+            else starSpans[i].classList.remove('active');
+          }
+        }
+        for (var j = 0; j < starSpans.length; j++) {
+          starSpans[j].addEventListener('click', function() { updateStars(parseInt(this.dataset.value)); });
+        }
+        updateStars(5);
+
+        document.getElementById('submitComment').addEventListener('click', function() {
+          var name = document.getElementById('commentName').value.trim() || 'Anonymous';
+          var city = document.getElementById('commentCity').value.trim() || 'Pakistan';
+          var text = document.getElementById('commentText').value.trim();
+          if (!text) return;
+          reviewsData.unshift({ name: name, city: city, stars: selectedStars, text: text });
+          renderReviews();
+          document.getElementById('commentName').value = '';
+          document.getElementById('commentCity').value = '';
+          document.getElementById('commentText').value = '';
+          updateStars(5);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+      } else {
+        initApp();
+      }
+    })();
+  </script>
+</body>
+</html>      animation: float 4s ease-in-out infinite;
       border: none;
       border-radius: 0;
     }
